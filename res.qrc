@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>fonts/UbuntuMono-Bold.ttf</file>
+        <file>style.qss</file>
+        <file>sound/428076__pschrandt__sad-blub.wav</file>
+        <file>sound/407478__loyalty-freak-music__drop.wav</file>
+        <file>images/ico.png</file>
+        <file>sound/404878__gnuoctathorpe__bassdrum-13.wav</file>
+        <file>sound/untitled2.mp3</file>
+        <file>images/index2.png</file>
+    </qresource>
+</RCC>
