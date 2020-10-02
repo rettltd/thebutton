@@ -1,5 +1,6 @@
 #include "widget.h"
 #include "game.h"
+#include <QDebug>
 
 widget::widget(QWidget *parent) : QGraphicsView(parent)
 {
@@ -19,25 +20,30 @@ void widget::setColor(QColor color)
     setStyleSheet("background-color: " + color.name());
 }
 
+void widget::setButtonColor(QColor color)
+{
+    Game::buttoncolor = color;
+
+}
+
 void widget::paintEvent(QPaintEvent *event)
 {
     p.begin(viewport());
     p.setRenderHint(QPainter::Antialiasing);
 
     QPen pen;
-    pen.setColor(Game::col[(Game::c1+8)%16]);
+    pen.setColor(buttonColor);//(Game::col[(Game::c1+8)%16]);
     p.setPen(pen);
+    //qDebug() <<"COLOR: " << buttonColor << "ll";
 
     RoundButton.drawInWidget(p);
-
-    //p.drawRect(x1-5, y1-5, 10, 10);
+    
     p.end();
     QGraphicsView::paintEvent(event);
 }
 
 void widget::mousePressEvent(QMouseEvent *event)
 {
-    //QGraphicsView::mousePressEvent(event);
     int x = event->x(); int y = event->y();
     x1=x; y1=y;
     if(RoundButton.isXYinC(x, y)) emit prssed();

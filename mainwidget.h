@@ -10,6 +10,8 @@
 #include "wondertext.h"
 #include "game.h"
 
+#include "coloranimation.h"
+
 class MainWidget : public QWidget
 {
     Q_OBJECT
@@ -27,6 +29,8 @@ public:
     WonderText text2;
     Game game;
 
+    void animation();
+
     int hp=3;
     QColor hpC[4]={QColor(0xffc51b1b), QColor(Qt::red), QColor(Qt::yellow), QColor(Qt::green)};
     bool isGame;
@@ -34,8 +38,14 @@ public:
     explicit MainWidget(QWidget *parent = nullptr);
     void onTimeout();
 private:
+
+    coloranimation col;
+    coloranimation col_1;
     int timer;
     int speed=1000;
+    //for animation
+    bool anim = 0;
+    int totalrad = 0;
 signals:
 
 public slots:

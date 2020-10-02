@@ -19,12 +19,13 @@ public:
     explicit widget(QWidget *parent = nullptr);
     void setColor(int id);
     void setColor(QColor color);
+    void setButtonColor(QColor color);
 protected:
 
     int x1=0, y1=0;
 
     QPainter p;
-
+    QColor buttonColor;
     void paintEvent(QPaintEvent *event) override;
     void mousePressEvent(QMouseEvent *event) override;
     void resizeEvent(QResizeEvent *event) override;

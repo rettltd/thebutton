@@ -22,6 +22,7 @@ CONFIG += mobility
 
 SOURCES += \
     circleoop.cpp \
+    coloranimation.cpp \
     colorfulscore.cpp \
     game.cpp \
     main.cpp \
@@ -33,6 +34,7 @@ SOURCES += \
 
 HEADERS += \
     circleoop.h \
+    coloranimation.h \
     colorfulscore.h \
     game.h \
     mainwidget.h \

@@ -11,6 +11,7 @@ public:
     static int color2;
     static int c1;
     static int c2;
+    static QColor buttoncolor;
     static const QColor col[16];
     static const QString cs[16];
 

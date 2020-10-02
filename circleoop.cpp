@@ -53,7 +53,7 @@ void Circleoop::drawInWidget(QPainter &p)
 
     br.setColor(Qt::black);
     p.fillPath(ppth2, br);
-    br.setColor(Game::col[Game::c1]);
+    br.setColor(Game::buttoncolor);//(Game::col[Game::c1]);
     p.fillPath(ppth, br);
     if(text == "") return;
     QRect rkt;
@@ -76,5 +76,6 @@ void Circleoop::drawInWidget(QPainter &p)
     p.drawText(rkt, Qt::TextFlag::TextWordWrap, text);
 
 }
+
 
 
