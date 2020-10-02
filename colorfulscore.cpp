@@ -43,11 +43,7 @@ void ColorfulScore::action(bool winOrLoose)
 
 void ColorfulScore::init()
 {
-    //QIcon icon;
-    //icon.addFile(QString::fromUtf8(":/icons/try_playButton.png"), QSize(), QIcon::Normal, QIcon::Off);
-    //setStyleSheet("*{background-image: url(:/images/ico.png)}");
-    //setWindowIcon(icon);
-    //setw
+    //no need so far
 }
 
 void ColorfulScore::mousePressEvent(QMouseEvent *ev)
@@ -79,12 +75,11 @@ void ColorfulScore::paintEvent(QPaintEvent *ev)
         p.drawLine(x+t/4, y+3*t/8, x+t/2, y+t/8);
         p.drawLine(x+t/4, y+5*t/8, x+t/2, y+7*t/8);
         p.drawEllipse(QPoint(x+t/2, y+t/2), t/16, 3*t/8);
-        //p.drawLine(x+t/2, y+7*t/16, x+t/2, y+9*t/16);
 
         p.drawLine(x+5*t/16, y+7*t/16, x+3*t/8, y+3*t/8);
         p.drawLine(x+5*t/16, y+t/2, x+3*t/8, y+t/2);
         p.drawLine(x+5*t/16, y+9*t/16, x+3*t/8, y+5*t/8);
-        //p.drawEllipse(x+t/2, y+t/4, t/4, 3*t/4);
+
         p.drawLine(x, y, x+t, y+t);
         p.drawLine(x+t, y, x, y+t);
         p.end();
@@ -98,5 +93,5 @@ void ColorfulScore::resizeEvent(QResizeEvent *ev)
     xc = ev->size().width();
     yc = ev->size().height();
     t = std::min(xc, yc);
-    //qDebug() << xc << " " << yc << " " << t;
+
 }
