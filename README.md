@@ -6,7 +6,7 @@ Install for Android [here](https://play.google.com/store/apps/details?id=com.ret
 # Compilation 
 To compile project using make and [qmake](https://doc.qt.io/qt-5/qmake-manual.html), run following commands:
 ```bash
- $ /path_to_qmake/qmake /path_to_project/thebutton/EPILEPSY_WARNING2.pro
+$ /path_to_qmake/qmake /path_to_project/thebutton/EPILEPSY_WARNING2.pro
 $ make
 ```
 To run application:
