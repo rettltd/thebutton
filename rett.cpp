@@ -21,6 +21,7 @@ rett::~rett()
 void rett::onTimeout()
 {
     update();
+    m.animation();
     m.onTimeout();
 }
 
