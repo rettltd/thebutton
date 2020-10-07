@@ -10,17 +10,17 @@ void MainWidget::animation()
     {
         if(widg.RoundButton.radius >= totalrad * 0.9 && anim)
         {
-            widg.RoundButton.radius -= 5;
+            widg.RoundButton.radius -= totalrad * 0.02;
         }
         else
         {
             anim = 0;
             if(widg.RoundButton.radius < totalrad && !anim)
             {
-                widg.RoundButton.radius += 5;
+                widg.RoundButton.radius += totalrad * 0.02;
             }
             else totalrad = 0;
-            ///qDebug() << "[RADIUS = " << widg.RoundButton.radius << "]" << endl;
+            qDebug() << "[RADIUS = " << widg.RoundButton.radius << "]" << endl;
         }
     }
     widg.setColor(col.animate());
@@ -73,14 +73,14 @@ MainWidget::MainWidget(QWidget *parent) : QWidget(parent)
     isGame = 0;
 
     widg.RoundButton.setText("  TAP TO\n\n  START");
-    Game::c1 = 5;
-
+    Game::c1 = qrand() % 16;
+    Game::c2 = qrand() % 16;
 
     //set colors of button and background
 
     ///set colors by changing 2nd color!
-    col.startAnimation(QColor(0,0,0),game.col[game.c2]);
-    col_1.startAnimation(QColor(0,0,0),game.col[game.c1]);
+    col.startAnimation(QColor(0,0,0),game.col[game.c1]);
+    col_1.startAnimation(QColor(0,0,0),game.col[game.c2]);
 }
 
 void MainWidget::onTimeout()
